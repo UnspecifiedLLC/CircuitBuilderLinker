@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.componentator.com/spa.min@18.js"></script>
+        <link rel="stylesheet" href="https://cdn.componentator.com/spa.min@18.css"></link>
+    </head>
+    <body>
+        <div class="padding">
+            <div class="row">
+                <a href="https://gist.githubusercontent.com/genecyber/ba6feb66d2279ecab6fa5bc5047d9da5/raw/5c70ffd7b5b67237dca1aa023bc957fd48e03aae/cb-import">https://gist.githubusercontent.com/genecyber/ba6feb66d2279ecab6fa5bc5047d9da5/raw/5c70ffd7b5b67237dca1aa023bc957fd48e03aae/cb-import</a>
+            </div>
+            <div class="row">
+                <div data---="input__link__placeholder:http://somelink.tld;type:text">Link to encode to CircuitBuilder DeepLink</div>
+            </div>
+            <div>
+                <a href="" class="CircuitBuilderLink">Circuit Builder Deep Link</a>
+            </div>
+        </divcl>
+        <script>
+           $("body").on('change', ".ui-input-control input", (e)=>{
+               console.log("changed", e.target.value)
+               var encoded = btoa(e.target.value)
+               $(".CircuitBuilderLink").attr('href', "CircuitBuilder://"+encoded)
+            })
+        </script>
+    </body>
+</html>
