@@ -15,7 +15,7 @@ function get(url) {
         ImportDesigner(result);
     })
     .catch(error => {
-        console.log("Trying to import again, got an error", err);
+        console.log("Trying to import again, got an error", error);
         setTimeout(()=>{get(btoa(url))},2000)
     });
 }
