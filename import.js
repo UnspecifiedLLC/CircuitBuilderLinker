@@ -19,3 +19,13 @@ function get(url) {
         setTimeout(()=>{get(btoa(url))},2000)
     });
 }
+$(".apply-button").hide()
+var oldSetState = setState
+setState = (value, noChange)=>{
+	!noChange && value && changedTab();
+    $('#designerstate').html(value);
+    $('.body').find('.apply-button').tclass('blink', value ? true : false)
+	value && setTimeout(()=>{EMIT('flow.apply')}, 500)
+	//oldSetState(value, noChange)
+    // $('.body').find('.apply-button').tclass('blink', value ? true : false)
+}
