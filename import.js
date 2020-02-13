@@ -29,4 +29,4 @@ setState = (value, noChange)=>{
 	//oldSetState(value, noChange)
     // $('.body').find('.apply-button').tclass('blink', value ? true : false)
 }
-$("button.exec.onlyicon.red").hide();
+setTimeout(()=>{$("button.exec.onlyicon.red").hide()}, 1000);
