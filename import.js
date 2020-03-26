@@ -66,3 +66,12 @@ function addCss(fileName) {
 
   head.appendChild(link);
 }
+
+var script = document.createElement('script');
+script.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=UA-114416830-4');
+script.setAttribute('type', 'text/javascript');
+document.getElementsByTagName('head')[0].appendChild(script);
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-114416830-4');
