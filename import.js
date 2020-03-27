@@ -1,5 +1,5 @@
 console.log("Injected");
-addCss("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+setTimeout(()=>{addCss("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");}, 1000)
 function get(url) {
 	console.log("inside get");
 	url = atob(url);
@@ -19,16 +19,21 @@ function get(url) {
 		setTimeout(()=>{get(btoa(url))},2000);
 	});
 }
+
 $(".apply-button").hide();
+
 var oldSetState = setState;
+
 setState = (value, noChange)=>{
 	!noChange && value && changedTab();
 	$('#designerstate').html(value);
 	$('.body').find('.apply-button').tclass('blink', value ? true : false);
 	value && setTimeout(()=>{EMIT('flow.apply')}, 500);
 }
+
 setTimeout(()=>{$("button.exec.onlyicon.red").hide()}, 2000);
-function getIcons() {
+
+/* function getIcons() {
 	// var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules;
 	var classes = Array();
 	Array.prototype.slice.call(document.styleSheets).forEach(function(sheet){
@@ -53,7 +58,7 @@ function getIcons() {
 	}
 	// console.log(icons);
 	return icons;
-}
+} */
 
 function addCss(fileName) {
 
